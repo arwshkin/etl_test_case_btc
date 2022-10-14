@@ -8,6 +8,7 @@
 - [Build Docker image](#build-docker-image)
 - [Run Docker Compose](#run-docker-compose)
 - [DAGs](#dags)
+- [Access to DB](#access-to-db)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
