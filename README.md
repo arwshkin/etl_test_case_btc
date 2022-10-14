@@ -14,7 +14,7 @@
 ## General information
 The scrapper collects current and historical data for individual tickers using the public API https://exchangerate.host/
 
-Work with several tickers at once is supported, examples of configurations are given in [dags/history_download.py]() and [dags/latest_download.py]()
+Work with several tickers at once is supported, examples of configurations are given in [dags/history_download.py](https://github.com/arwshkin/etl_test_case_btc/blob/main/dags/history_download.py#L20) and [dags/latest_download.py](https://github.com/arwshkin/etl_test_case_btc/blob/main/dags/latest_download.py#L19)
 
 ## Build Docker image
 
@@ -39,3 +39,7 @@ This command creates several containers:
 By default, there are two dags in the airflow:
 - history_download (execution schedule - one-time) - dag that downloads all available data for this ticker in the specified time period by the provided ticker name, as well as the left and right borders of the time interval. Since there is a restriction in the API that one request can contain data for one year, the time interval is divided into several intervals, requests for which go asynchronously
 - latest_download (execution schedule - every 3 hours) - dag that one-time downloads the last known value of the specified ticker.
+
+## Access to DB
+
+To access the database with data, you can use the login-password from the [.env](https://github.com/arwshkin/etl_test_case_btc/blob/main/.env#L24) file
